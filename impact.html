@@ -1,0 +1,151 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Impact — FoodShare</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar-fs">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🍲</span> FoodShare</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="donate-food.html">Donate Food</a>
+      <a href="find-food.html">Find Food</a>
+      <a href="my-claims.html">My Claims</a>
+      <a href="admin.html">Admin</a>
+      <a href="impact.html" class="active">Impact</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-auth" id="navAuthSlot">
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="btn-fs-primary">Register</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section-fs pb-2">
+  <div class="container text-center">
+    <span class="badge-pill">IMPACT</span>
+    <h2 class="mt-3">Every rescued meal, measured</h2>
+    <p class="text-muted">Transparent, community-wide reporting on the food FoodShare keeps out of landfill.</p>
+  </div>
+</section>
+
+<section class="container">
+  <div class="row g-4 mb-4">
+    <div class="col-md-3 col-6"><div class="card-fs"><div class="stat-label-sm">Meals Served</div><div class="stat-num">12,500+</div></div></div>
+    <div class="col-md-3 col-6"><div class="card-fs"><div class="stat-label-sm">Food Saved</div><div class="stat-num">8,500 kg</div></div></div>
+    <div class="col-md-3 col-6"><div class="card-fs"><div class="stat-label-sm">People Reached</div><div class="stat-num">9,800+</div></div></div>
+    <div class="col-md-3 col-6"><div class="card-fs"><div class="stat-label-sm">CO₂ Avoided</div><div class="stat-num">21,250 kg</div></div></div>
+  </div>
+
+  <div class="row g-4 mb-4">
+    <div class="col-md-6">
+      <div class="card-fs">
+        <p class="fw-semibold small mb-1">Meals served over time</p>
+        <canvas id="lineChart" height="180"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-fs">
+        <p class="fw-semibold small mb-1">Food rescued (kg) · By month</p>
+        <canvas id="barChart" height="180"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-4">
+    <div class="col-md-6">
+      <div class="card-fs">
+        <p class="fw-semibold small mb-1">Donations by category</p>
+        <canvas id="pieChart" height="200"></canvas>
+      </div>
+    </div>
+    <div class="col-md-6">
+      <div class="card-fs">
+        <p class="fw-semibold small mb-1">Delivery outcomes</p>
+        <canvas id="donutChart" height="200"></canvas>
+      </div>
+    </div>
+  </div>
+
+  <div class="row g-4 mb-5">
+    <div class="col-md-4"><div class="card-fs"><div class="stat-label-sm">Equivalent to</div><div class="stat-num">21.2 tonnes</div><div class="stat-sub">CO₂ emissions avoided</div></div></div>
+    <div class="col-md-4"><div class="card-fs"><div class="stat-label-sm">Water saved</div><div class="stat-num">4.8M litres</div><div class="stat-sub">Embedded in rescued food</div></div></div>
+    <div class="col-md-4"><div class="card-fs"><div class="stat-label-sm">Landfill diverted</div><div class="stat-num">8.5 tonnes</div><div class="stat-sub">Organic waste</div></div></div>
+  </div>
+</section>
+
+<!-- Food heroes leaderboard -->
+<section class="section-fs" style="background:var(--green-bg);" id="heroes">
+  <div class="container">
+    <div class="row align-items-center g-4">
+      <div class="col-md-5">
+        <span class="badge-pill">FOOD HEROES</span>
+        <h2 class="mt-3">Recognition for the kitchens that give back</h2>
+        <p class="text-muted">Donors earn badges and climb the monthly leaderboard as their rescued meals add up.</p>
+        <a href="#" class="btn-fs-primary">View leaderboard →</a>
+      </div>
+      <div class="col-md-7">
+        <div class="card-fs p-0">
+          <ul class="list-group list-group-flush">
+            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+              <span><strong>1</strong> &nbsp; Green Leaf Restaurant <br><small class="text-muted ms-3">Restaurant</small></span><strong>2,480 meals</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+              <span><strong>2</strong> &nbsp; Spice Hub <br><small class="text-muted ms-3">Restaurant</small></span><strong>2,110 meals</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+              <span><strong>3</strong> &nbsp; City Restaurant <br><small class="text-muted ms-3">Restaurant</small></span><strong>1,760 meals</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+              <span><strong>4</strong> &nbsp; Foodies Park <br><small class="text-muted ms-3">Cafe Chain</small></span><strong>1,480 meals</strong>
+            </li>
+            <li class="list-group-item d-flex justify-content-between align-items-center py-3">
+              <span><strong>5</strong> &nbsp; Royal Caterers <br><small class="text-muted ms-3">Event Caterer</small></span><strong>1,240 meals</strong>
+            </li>
+          </ul>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-fs">
+  <div class="container text-center text-muted small">© 2026 FoodShare. Share Food. Share Happiness.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/chart.js@4.4.4/dist/chart.umd.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+const months = ['Jan','Feb','Mar','Apr','May','Jun','Jul','Aug'];
+new Chart(document.getElementById('lineChart'), {
+  type: 'line',
+  data: { labels: months, datasets: [{ data: [500,750,950,1150,1400,1650,1850,2000], borderColor:'#0e8a4b', backgroundColor:'rgba(14,138,75,.1)', fill:true, tension:.35 }]},
+  options: { plugins:{legend:{display:false}} }
+});
+new Chart(document.getElementById('barChart'), {
+  type: 'bar',
+  data: { labels: months, datasets: [{ data: [250,350,450,600,750,900,1050,1300], backgroundColor:'#12995a', borderRadius:6 }]},
+  options: { plugins:{legend:{display:false}} }
+});
+new Chart(document.getElementById('pieChart'), {
+  type: 'pie',
+  data: { labels: ['Cooked Meals','Bakery','Raw Produce','Event Catering','Packaged'],
+    datasets: [{ data: [45,20,15,12,8], backgroundColor:['#0f4d2e','#0e8a4b','#7fd8a4','#f4a940','#c9c9c9'] }]}
+});
+new Chart(document.getElementById('donutChart'), {
+  type: 'doughnut',
+  data: { labels: ['Delivered','In Transit','Requested','Expired'],
+    datasets: [{ data: [70,15,10,5], backgroundColor:['#0f4d2e','#7fd8a4','#f4a940','#c9c9c9'] }]}
+});
+</script>
+</body>
+</html>

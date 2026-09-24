@@ -1,0 +1,133 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Donate Food — FoodShare</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar-fs">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🍲</span> FoodShare</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="donate-food.html" class="active">Donate Food</a>
+      <a href="find-food.html">Find Food</a>
+      <a href="my-claims.html">My Claims</a>
+      <a href="admin.html">Admin</a>
+      <a href="impact.html">Impact</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-auth" id="navAuthSlot">
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="btn-fs-primary">Register</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-fs py-5">
+  <div class="container">
+    <span class="badge-pill">🍴 DONATE FOOD</span>
+    <h1 style="font-size:2.2rem;">List your surplus food<br>in under a minute</h1>
+    <p class="lead-fs">Verified NGOs nearby get notified instantly. You'll need to be logged in as a Donor to publish a listing.</p>
+  </div>
+</section>
+
+<section class="section-fs pb-0">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 col-6">
+        <div class="step-card">
+          <div class="step-icon">📝</div>
+          <div class="step-tag">STEP 1</div>
+          <h5>Fill the form</h5>
+          <p>Log in as a Donor, then list what you have — quantity, weight, safe window and pickup address.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="step-card">
+          <div class="step-icon">🔔</div>
+          <div class="step-tag">STEP 2</div>
+          <h5>NGO gets notified</h5>
+          <p>Verified NGOs near your address see the listing instantly and can claim it before it expires.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="step-card">
+          <div class="step-icon">🤝</div>
+          <div class="step-tag">STEP 3</div>
+          <h5>Hand over the food</h5>
+          <p>The NGO's volunteer collects from your pickup address, and the delivery is confirmed on FoodShare.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-fs">
+  <div class="container" style="max-width:640px;">
+    <div id="donorLoginNotice" class="card-fs text-center py-5" style="display:none;">
+      <p class="mb-3">You need to be logged in as a Donor to publish a food listing.</p>
+      <a href="login.html" class="btn-fs-primary d-inline-flex">Login as Donor</a>
+    </div>
+    <form id="donateForm" class="card-fs" style="display:none;">
+      <div class="mb-3">
+        <label class="form-label-fs">Food title</label>
+        <input type="text" class="form-control-fs" id="foodTitle" placeholder="e.g. Veg Biryani" required>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label-fs">Category</label>
+          <select class="form-control-fs" id="foodCategory" required>
+            <option value="Cooked Meals">Cooked Meals</option>
+            <option value="Bakery">Bakery</option>
+            <option value="Raw Produce">Raw Produce</option>
+            <option value="Event Catering">Event Catering</option>
+            <option value="Packaged">Packaged</option>
+          </select>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label-fs">Servings</label>
+          <input type="number" class="form-control-fs" id="foodServings" placeholder="e.g. 25" required>
+        </div>
+      </div>
+      <div class="row">
+        <div class="col-md-6 mb-3">
+          <label class="form-label-fs">Weight (kg)</label>
+          <input type="number" class="form-control-fs" id="foodWeight" placeholder="e.g. 12" required>
+        </div>
+        <div class="col-md-6 mb-3">
+          <label class="form-label-fs">Safe window (hours from now)</label>
+          <input type="number" class="form-control-fs" id="foodExpiry" placeholder="e.g. 4" required>
+        </div>
+      </div>
+      <div class="mb-3">
+        <label class="form-label-fs">Pickup address</label>
+        <input type="text" class="form-control-fs" id="foodAddress" placeholder="Full pickup address" required>
+      </div>
+      <div class="mb-3">
+        <label class="form-label-fs">Food photo (image link)</label>
+        <input type="url" class="form-control-fs" id="foodImage" placeholder="e.g. https://i.ibb.co/abc123/food.jpg">
+        <small class="text-muted">Paste a <strong>direct image link</strong> (ends in .jpg/.png, e.g. from <a href="https://imgbb.com" target="_blank" rel="noopener">imgbb.com</a>). Google Photos/Drive share links won't work here. Optional — if blank or broken, a default food image is shown instead.</small>
+      </div>
+      <button type="submit" class="btn-fs-primary w-100 justify-content-center">Publish listing</button>
+      <div id="donateMsg" class="mt-2"></div>
+    </form>
+  </div>
+</section>
+
+<footer class="footer-fs">
+  <div class="container text-center text-muted small">© 2026 FoodShare. Share Food. Share Happiness.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+  document.addEventListener("DOMContentLoaded", checkDonorAccess);
+</script>
+</body>
+</html>

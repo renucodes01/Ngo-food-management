@@ -1,0 +1,253 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>FoodShare — Reduce Food Waste, Feed People</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<!-- Navbar -->
+<nav class="navbar-fs">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🍲</span> FoodShare</a>
+    <div class="nav-links">
+      <a href="index.html" class="active">Home</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="donate-food.html">Donate Food</a>
+      <a href="find-food.html">Find Food</a>
+      <a href="my-claims.html">My Claims</a>
+      <a href="admin.html">Admin</a>
+      <a href="impact.html">Impact</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-auth" id="navAuthSlot">
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="btn-fs-primary">Register</a>
+    </div>
+  </div>
+</nav>
+<section class="hero-fs">
+  <div class="container">
+    <div class="row align-items-center g-5">
+      <div class="col-lg-6">
+        <span class="badge-pill">✦ ZERO FOOD WASTE NETWORK</span>
+        <h1>Reduce food waste.<br><span class="accent">Rescue surplus food.</span><br>Feed people in need.</h1>
+        <p class="lead-fs">FoodShare links kitchens with verified NGOs in real time — with freshness countdowns, map-based pickups and transparent impact reporting.</p>
+        <div class="d-flex gap-3 mt-4">
+          <a href="donate-food.html" class="btn-fs-primary">Donate Food →</a>
+          <a href="find-food.html" class="btn-fs-outline">Find Food</a>
+        </div>
+        <div class="stat-row">
+          <div><div class="stat-label">MEALS SERVED</div><div class="stat-value">12,500+</div></div>
+          <div><div class="stat-label">KG RESCUED</div><div class="stat-value">8,500+</div></div>
+          <div><div class="stat-label">PARTNER NGOS</div><div class="stat-value">150+</div></div>
+        </div>
+      </div>
+      <div class="col-lg-6">
+        <div class="hero-img-wrap">
+          <img src="https://thumbs.dreamstime.com/b/friends-having-dinner-top-view-four-people-together-sitting-rustic-wooden-table-60343221.jpg" alt="Volunteers donating food">
+          <div class="floating-card">
+            <div class="live-tag">🍲 No plate left behind</div>
+            <div class="live-title">Surplus for someone is a meal for someone else.</div>
+            <div class="live-sub">FoodShare — bridging kitchens & communities</div>
+          </div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- Live Now preview -->
+<section class="section-fs">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill">LIVE NOW</span>
+      <h2>Food available right now, near you</h2>
+      <p>A quick look at what's currently listed — head to Find Food to filter by distance, type and freshness.</p>
+    </div>
+    <div class="row g-4" id="liveNowGrid">
+      <div class="col-md-4 food-col">
+        <div class="food-card">
+          <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?q=80&w=600" alt="Veg Biryani">
+          <div class="fc-body">
+            <h6>Veg Biryani</h6>
+            <div class="fc-sub">Hotel Green Leaf · Hotel</div>
+            <div class="fc-meta"><span>👥 25 servings</span><span>🥡 12 kg</span></div>
+            <div class="fc-expiry">📍 2.4 km · Expires in 2h 14m</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 food-col">
+        <div class="food-card">
+          <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=600" alt="Paneer Butter Masala">
+          <div class="fc-body">
+            <h6>Paneer Butter Masala & Chapati</h6>
+            <div class="fc-sub">Spice Hub Restaurant · Restaurant</div>
+            <div class="fc-meta"><span>👥 18 servings</span><span>🥡 8 kg</span></div>
+            <div class="fc-expiry">📍 1.2 km · Expires in 44m</div>
+          </div>
+        </div>
+      </div>
+      <div class="col-md-4 food-col">
+        <div class="food-card">
+          <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=600" alt="Sambar Rice">
+          <div class="fc-body">
+            <h6>Sambar Rice & Curd Rice</h6>
+            <div class="fc-sub">SRM College Canteen · College Canteen</div>
+            <div class="fc-meta"><span>👥 45 servings</span><span>🥡 20 kg</span></div>
+            <div class="fc-expiry">📍 8.9 km · Expires in 3h 19m</div>
+          </div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="find-food.html" class="btn-fs-outline">See all listings →</a>
+    </div>
+  </div>
+</section>
+
+<!-- Why FoodShare -->
+<section class="section-fs">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill">WHY FOODSHARE</span>
+      <h2>Surplus food has hours, not days</h2>
+      <p>Our platform is built around the freshness clock — every listing carries a live countdown so food moves before it spoils.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="card-fs">
+          <div class="icon-circle">🍴</div>
+          <div class="stat-label-sm">Meals Served</div>
+          <div class="stat-num">12,500+</div>
+          <div class="stat-sub">Across 320 active donors</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="card-fs">
+          <div class="icon-circle">🌿</div>
+          <div class="stat-label-sm">Food Rescued</div>
+          <div class="stat-num">8,500 kg</div>
+          <div class="stat-sub">Diverted from landfill</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="card-fs">
+          <div class="icon-circle">👥</div>
+          <div class="stat-label-sm">People Fed</div>
+          <div class="stat-num">9,800+</div>
+          <div class="stat-sub">Shelters, orphanages, kitchens</div>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="card-fs">
+          <div class="icon-circle">🛡️</div>
+          <div class="stat-label-sm">CO₂ Avoided</div>
+          <div class="stat-num">21,250 kg</div>
+          <div class="stat-sub">Equivalent emissions saved</div>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- How it works preview -->
+<section class="section-fs" style="background:var(--green-bg);">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill">HOW IT WORKS</span>
+      <h2>Four steps from surplus to served</h2>
+      <p>Designed with food-safety windows, verified organisations and live logistics.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-3 col-6">
+        <div class="step-card">
+          <div class="step-icon">🍴</div>
+          <div class="step-tag">STEP 1</div>
+          <h5>Donor posts surplus</h5>
+          <p>Restaurants, canteens and event halls list leftover food with quantity, freshness window and pickup address.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="step-card">
+          <div class="step-icon">📍</div>
+          <div class="step-tag">STEP 2</div>
+          <h5>Nearby NGO requests</h5>
+          <p>Verified NGOs see live listings sorted by distance and expiry, then request the servings they need.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="step-card">
+          <div class="step-icon">🚚</div>
+          <div class="step-tag">STEP 3</div>
+          <h5>Pickup & delivery</h5>
+          <p>A volunteer route is generated, live-tracked on the map and confirmed with a delivery proof.</p>
+        </div>
+      </div>
+      <div class="col-md-3 col-6">
+        <div class="step-card">
+          <div class="step-icon">❤️</div>
+          <div class="step-tag">STEP 4</div>
+          <h5>Meals served</h5>
+          <p>Every completed pickup adds to your impact score, CO₂ saved and the community leaderboard.</p>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="how-it-works.html" class="btn-fs-outline">See the full workflow →</a>
+    </div>
+  </div>
+</section>
+
+<!-- CTA -->
+<section class="section-fs">
+  <div class="container">
+    <div class="cta-banner">
+      <h2>Every meal saved is a meal shared</h2>
+      <p>Join 320+ donors and 150+ verified NGOs already rescuing food across the city.</p>
+      <a href="register.html" class="btn-cta-light me-2">Become a donor</a>
+      <a href="register.html" class="btn-cta-outline">Register your NGO</a>
+    </div>
+  </div>
+</section>
+
+<!-- Footer -->
+<footer class="footer-fs">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="brand mb-2"><span class="brand-icon">🍲</span> FoodShare</div>
+        <p class="text-muted small">Share Food. Share Happiness.<br>Rescuing surplus food from kitchens, canteens and events — and routing it to verified NGOs before it ever becomes waste.</p>
+        <span class="social-circle">f</span><span class="social-circle">ig</span><span class="social-circle">tw</span><span class="social-circle">in</span>
+      </div>
+      <div class="col-md-2 col-6">
+        <h6>Platform</h6>
+        <a href="how-it-works.html">How It Works</a>
+        <a href="find-food.html">Find Food</a>
+        <a href="impact.html#heroes">Food Heroes</a>
+        <a href="impact.html">Impact Dashboard</a>
+      </div>
+      <div class="col-md-2 col-6">
+        <h6>Company</h6>
+        <a href="about.html">About</a>
+        <a href="about.html#contact">Contact</a>
+        <a href="about.html#privacy">Privacy</a>
+        <a href="about.html#terms">Terms</a>
+      </div>
+      <div class="col-md-4">
+        <h6>Get in touch</h6>
+        <a href="mailto:hello@foodshare.org">✉ hello@foodshare.org</a>
+        <a href="tel:+919840011223">📞 +91 98400 11223</a>
+        <a>📍 Nungambakkam, Chennai 600034</a>
+      </div>
+    </div>
+  </div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>

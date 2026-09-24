@@ -1,0 +1,167 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>How It Works — FoodShare</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar-fs">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🍲</span> FoodShare</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html" class="active">How It Works</a>
+      <a href="donate-food.html">Donate Food</a>
+      <a href="find-food.html">Find Food</a>
+      <a href="my-claims.html">My Claims</a>
+      <a href="admin.html">Admin</a>
+      <a href="impact.html">Impact</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-auth" id="navAuthSlot">
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="btn-fs-primary">Register</a>
+    </div>
+  </div>
+</nav>
+
+<section class="section-fs pb-0">
+  <div class="container text-center">
+    <div class="d-inline-flex bg-white border rounded-pill p-1 mb-4" id="roleTabs">
+      <button class="btn btn-sm rounded-pill px-3 tab-btn active" data-tab="donor" style="background:var(--green-dark);color:#fff;">For Donors</button>
+      <button class="btn btn-sm rounded-pill px-3 tab-btn" data-tab="ngo">For NGOs</button>
+      <button class="btn btn-sm rounded-pill px-3 tab-btn" data-tab="admin">For Admins</button>
+    </div>
+  </div>
+</section>
+
+<!-- Donor steps -->
+<section class="container tab-panel" id="panel-donor">
+  <div class="row g-4">
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">📷</div><div class="step-tag">1</div><h5>Post surplus food</h5><p>Add photos, quantity, category and the safe pickup window.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">📋</div><div class="step-tag">2</div><h5>Receive NGO requests</h5><p>Verified NGOs nearby request servings against your listing.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">🚚</div><div class="step-tag">3</div><h5>Hand over at pickup</h5><p>Confirm the volunteer's arrival and hand over the packed food.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">📈</div><div class="step-tag">4</div><h5>Track your impact</h5><p>See meals saved, CO₂ avoided and your leaderboard rank.</p></div></div>
+  </div>
+</section>
+
+<!-- NGO steps -->
+<section class="container tab-panel d-none" id="panel-ngo">
+  <div class="row g-4">
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">📍</div><div class="step-tag">1</div><h5>Browse live listings</h5><p>Filter by distance, food type, veg/non-veg and freshness countdown.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">📋</div><div class="step-tag">2</div><h5>Request servings</h5><p>Tell the donor how many servings you need and your preferred pickup time.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">🚚</div><div class="step-tag">3</div><h5>Collect on route</h5><p>Follow the optimised map route from donor to your shelter kitchen.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">🌍</div><div class="step-tag">4</div><h5>Confirm delivery</h5><p>Log beneficiaries served so impact reporting stays transparent.</p></div></div>
+  </div>
+</section>
+
+<!-- Admin steps -->
+<section class="container tab-panel d-none" id="panel-admin">
+  <div class="row g-4">
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">🛡️</div><div class="step-tag">1</div><h5>Verify organisations</h5><p>Review NGO registration documents and approve or reject applications.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">🍴</div><div class="step-tag">2</div><h5>Monitor listings</h5><p>Watch expiry-risk donations and nudge donors or NGOs before food spoils.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">🔔</div><div class="step-tag">3</div><h5>Resolve disputes</h5><p>Handle no-shows, cancellations and quality reports from either side.</p></div></div>
+    <div class="col-md-3 col-6"><div class="step-card"><div class="step-icon">✅</div><div class="step-tag">4</div><h5>Publish reports</h5><p>Export city-level impact analytics for partners and funders.</p></div></div>
+  </div>
+</section>
+
+<!-- Food safety -->
+<section class="section-fs" style="background:var(--green-bg);">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill">FOOD SAFETY</span>
+      <h2>Freshness is enforced, not assumed</h2>
+      <p>Three built-in safeguards keep every rescued meal safe to serve.</p>
+    </div>
+    <div class="row g-4">
+      <div class="col-md-4">
+        <div class="card-fs">
+          <h6 class="fw-bold">Live expiry countdown</h6>
+          <p class="text-muted small mb-0">Each listing shows exact minutes left before the safe donation window closes.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-fs">
+          <h6 class="fw-bold">Storage declaration</h6>
+          <p class="text-muted small mb-0">Donors declare temperature and packaging conditions before publishing.</p>
+        </div>
+      </div>
+      <div class="col-md-4">
+        <div class="card-fs">
+          <h6 class="fw-bold">Auto de-listing</h6>
+          <p class="text-muted small mb-0">Expired items are removed from search and flagged in the expiry alerts console.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<!-- FAQ -->
+<section class="section-fs">
+  <div class="container">
+    <div class="section-head">
+      <span class="badge-pill">FAQ</span>
+      <h2>Common questions</h2>
+    </div>
+    <div class="accordion" id="faqAccordion" style="max-width:700px;margin:0 auto;">
+      <div class="accordion-item mb-2 border rounded-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button" type="button" data-bs-toggle="collapse" data-bs-target="#faq1">What food can be donated?</button>
+        </h2>
+        <div id="faq1" class="accordion-collapse collapse show" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Freshly prepared cooked meals, bakery items, packaged food and raw produce that is safely stored and still within its edible window.</div>
+        </div>
+      </div>
+      <div class="accordion-item mb-2 border rounded-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq2">How is food safety handled?</button>
+        </h2>
+        <div id="faq2" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Donors declare storage conditions, listings carry a live countdown, and expired items auto de-list from search.</div>
+        </div>
+      </div>
+      <div class="accordion-item mb-2 border rounded-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq3">Who can request food?</button>
+        </h2>
+        <div id="faq3" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">Only NGOs verified and approved by FoodShare admins can request and collect listed food.</div>
+        </div>
+      </div>
+      <div class="accordion-item mb-2 border rounded-3">
+        <h2 class="accordion-header">
+          <button class="accordion-button collapsed" type="button" data-bs-toggle="collapse" data-bs-target="#faq4">Is there any cost?</button>
+        </h2>
+        <div id="faq4" class="accordion-collapse collapse" data-bs-parent="#faqAccordion">
+          <div class="accordion-body text-muted">FoodShare is completely free for both donors and verified NGOs.</div>
+        </div>
+      </div>
+    </div>
+    <div class="text-center mt-4">
+      <a href="register.html" class="btn-fs-dark">Get started free →</a>
+    </div>
+  </div>
+</section>
+
+<footer class="footer-fs">
+  <div class="container text-center text-muted small">© 2026 FoodShare. Share Food. Share Happiness.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+<script>
+document.querySelectorAll('.tab-btn').forEach(btn=>{
+  btn.addEventListener('click',()=>{
+    document.querySelectorAll('.tab-btn').forEach(b=>{b.classList.remove('active');b.style.background='';b.style.color='';});
+    btn.classList.add('active'); btn.style.background='var(--green-dark)'; btn.style.color='#fff';
+    document.querySelectorAll('.tab-panel').forEach(p=>p.classList.add('d-none'));
+    document.getElementById('panel-'+btn.dataset.tab).classList.remove('d-none');
+  });
+});
+</script>
+</body>
+</html>

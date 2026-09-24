@@ -1,0 +1,257 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Find Food — FoodShare</title>
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="css/style.css">
+</head>
+<body>
+
+<nav class="navbar-fs">
+  <div class="container nav-inner">
+    <a href="index.html" class="brand"><span class="brand-icon">🍲</span> FoodShare</a>
+    <div class="nav-links">
+      <a href="index.html">Home</a>
+      <a href="how-it-works.html">How It Works</a>
+      <a href="donate-food.html">Donate Food</a>
+      <a href="find-food.html" class="active">Find Food</a>
+      <a href="my-claims.html">My Claims</a>
+      <a href="admin.html">Admin</a>
+      <a href="impact.html">Impact</a>
+      <a href="about.html">About Us</a>
+    </div>
+    <div class="nav-auth" id="navAuthSlot">
+      <a href="login.html" class="login-link">Login</a>
+      <a href="register.html" class="btn-fs-primary">Register</a>
+    </div>
+  </div>
+</nav>
+
+<section class="hero-fs py-5">
+  <div class="container">
+    <span class="badge-pill">LIVE LISTINGS</span>
+    <h1 style="font-size:2.2rem;">Find surplus food near you</h1>
+    <p class="lead-fs">Every listing below is posted by a registered kitchen and auto-delisted once its safe window closes.</p>
+  </div>
+</section>
+
+<section class="section-fs pb-0">
+  <div class="container">
+    <div class="row g-4">
+      <div class="col-md-4 col-6">
+        <div class="step-card">
+          <div class="step-icon">🔍</div>
+          <div class="step-tag">STEP 1</div>
+          <h5>Browse listings</h5>
+          <p>Filter by food type, distance and freshness to see what's available near your NGO right now.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="step-card">
+          <div class="step-icon">✅</div>
+          <div class="step-tag">STEP 2</div>
+          <h5>Claim what you need</h5>
+          <p>Open a listing's details and tap Claim — you must be logged in as a verified NGO to claim food.</p>
+        </div>
+      </div>
+      <div class="col-md-4 col-6">
+        <div class="step-card">
+          <div class="step-icon">🚚</div>
+          <div class="step-tag">STEP 3</div>
+          <h5>Collect & confirm</h5>
+          <p>Pick up from the donor's address within the safe window, then mark the listing delivered.</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</section>
+
+<section class="section-fs pt-4">
+  <div class="container">
+    <div class="filter-bar mb-4">
+      <div class="row align-items-center g-3">
+        <div class="col-12">
+          <input type="text" class="form-control-fs" placeholder="🔍 Search food, donor or area...">
+        </div>
+      </div>
+      <div class="mt-3 d-flex flex-wrap align-items-center gap-2">
+        <div data-filter-group="type" class="d-flex flex-wrap gap-2">
+          <span class="filter-pill active soft" data-value="All">All</span>
+          <span class="filter-pill" data-value="Cooked Meals">Cooked Meals</span>
+          <span class="filter-pill" data-value="Bakery">Bakery</span>
+          <span class="filter-pill" data-value="Raw Produce">Raw Produce</span>
+          <span class="filter-pill" data-value="Event Catering">Event Catering</span>
+          <span class="filter-pill" data-value="Packaged">Packaged</span>
+        </div>
+        <span class="border-start ps-2"></span>
+        <span class="filter-pill active soft" id="hideExpiredPill">🙈 Hide expired & claimed</span>
+      </div>
+    </div>
+
+    <p class="text-muted small" id="foodCountLabel">Showing live listings</p>
+
+    <div id="foodGrid">
+
+      <div class="food-category-section" data-category="Cooked Meals">
+        <h6 class="fw-bold mb-3 mt-2">🍛 Cooked Meals</h6>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Cooked Meals">
+              <img src="https://images.unsplash.com/photo-1563379091339-03246963d96c?q=80&w=600" alt="Veg Biryani">
+              <div class="fc-body">
+                <h6>Veg Biryani</h6>
+                <div class="fc-sub">Hotel Green Leaf · Hotel</div>
+                <div class="fc-meta"><span>👥 25 servings</span><span>🥡 12 kg</span></div>
+                <div class="fc-expiry">📍 2.4 km · Expires in 2h 14m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo1',title:'Veg Biryani',donor:'Hotel Green Leaf',donorType:'Hotel',img:'https://images.unsplash.com/photo-1563379091339-03246963d96c?q=80&w=600',servings:'25',weight:'12',distance:'2.4 km',expiry:'Expires in 2h 14m',address:'14, Anna Salai, Chennai'})">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Cooked Meals">
+              <img src="https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=600" alt="Paneer Butter Masala">
+              <div class="fc-body">
+                <h6>Paneer Butter Masala & Chapati</h6>
+                <div class="fc-sub">Spice Hub Restaurant · Restaurant</div>
+                <div class="fc-meta"><span>👥 18 servings</span><span>🥡 8 kg</span></div>
+                <div class="fc-expiry">📍 1.2 km · Expires in 44m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo2',title:'Paneer Butter Masala & Chapati',donor:'Spice Hub Restaurant',donorType:'Restaurant',img:'https://images.unsplash.com/photo-1601050690597-df0568f70950?q=80&w=600',servings:'18',weight:'8',distance:'1.2 km',expiry:'Expires in 44m',address:'22, T. Nagar Main Road, Chennai'})">View Details</button>
+              </div>
+            </div>
+          </div>
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Cooked Meals">
+              <img src="https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=600" alt="Sambar Rice">
+              <div class="fc-body">
+                <h6>Sambar Rice & Curd Rice</h6>
+                <div class="fc-sub">SRM College Canteen · College Canteen</div>
+                <div class="fc-meta"><span>👥 45 servings</span><span>🥡 20 kg</span></div>
+                <div class="fc-expiry">📍 8.9 km · Expires in 3h 19m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo5',title:'Sambar Rice & Curd Rice',donor:'SRM College Canteen',donorType:'College Canteen',img:'https://images.unsplash.com/photo-1596797038530-2c107229654b?q=80&w=600',servings:'45',weight:'20',distance:'8.9 km',expiry:'Expires in 3h 19m',address:'SRM Campus, Kattankulathur'})">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-category-section" data-category="Bakery">
+        <h6 class="fw-bold mb-3">🥖 Bakery</h6>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Bakery">
+              <img src="https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600" alt="Breads and Pastries">
+              <div class="fc-body">
+                <h6>Assorted Breads & Pastries</h6>
+                <div class="fc-sub">Crust & Crumb Bakery · Bakery</div>
+                <div class="fc-meta"><span>👥 60 servings</span><span>🥡 15 kg</span></div>
+                <div class="fc-expiry">📍 4.7 km · Expires in 10h 19m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo3',title:'Assorted Breads & Pastries',donor:'Crust & Crumb Bakery',donorType:'Bakery',img:'https://images.unsplash.com/photo-1509440159596-0249088772ff?q=80&w=600',servings:'60',weight:'15',distance:'4.7 km',expiry:'Expires in 10h 19m',address:'9, Adyar Bridge Road, Chennai'})">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-category-section" data-category="Raw Produce">
+        <h6 class="fw-bold mb-3">🥦 Raw Produce</h6>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Raw Produce">
+              <img src="https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=600" alt="Vegetables">
+              <div class="fc-body">
+                <h6>Fresh Vegetables & Fruits</h6>
+                <div class="fc-sub">FreshMart Supermarket · Supermarket</div>
+                <div class="fc-meta"><span>👥 120 servings</span><span>🥡 40 kg</span></div>
+                <div class="fc-expiry">📍 6.1 km · Expires in 24h 50m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo4',title:'Fresh Vegetables & Fruits',donor:'FreshMart Supermarket',donorType:'Supermarket',img:'https://images.unsplash.com/photo-1540420773420-3366772f4999?q=80&w=600',servings:'120',weight:'40',distance:'6.1 km',expiry:'Expires in 24h 50m',address:'Velachery Main Road, Chennai'})">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-category-section" data-category="Event Catering">
+        <h6 class="fw-bold mb-3">🎉 Event Catering</h6>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Event Catering">
+              <img src="https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=600" alt="Wedding Buffet">
+              <div class="fc-body">
+                <h6>Wedding Buffet Surplus</h6>
+                <div class="fc-sub">Royal Caterers · Event Hall</div>
+                <div class="fc-meta"><span>👥 80 servings</span><span>🥡 30 kg</span></div>
+                <div class="fc-expiry">📍 3.3 km · Expires in 1h 29m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo6',title:'Wedding Buffet Surplus',donor:'Royal Caterers',donorType:'Event Hall',img:'https://images.unsplash.com/photo-1555244162-803834f70033?q=80&w=600',servings:'80',weight:'30',distance:'3.3 km',expiry:'Expires in 1h 29m',address:'Mahalingapuram Kalyana Mandapam, Chennai'})">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+      <div class="food-category-section" data-category="Packaged">
+        <h6 class="fw-bold mb-3">📦 Packaged</h6>
+        <div class="row g-4 mb-4">
+          <div class="col-md-4 food-col">
+            <div class="food-card" data-type="Packaged">
+              <img src="https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600" alt="Packed Lunch Boxes">
+              <div class="fc-body">
+                <h6>Packed Lunch Boxes</h6>
+                <div class="fc-sub">City Restaurant · Restaurant</div>
+                <div class="fc-meta"><span>👥 40 servings</span><span>🥡 18 kg</span></div>
+                <div class="fc-expiry">📍 1.9 km · Expires in 5h 19m</div>
+                <button type="button" class="btn-fs-primary w-100 mt-2 justify-content-center" data-bs-toggle="modal" data-bs-target="#foodDetailModal" onclick="openFoodModal({id:'demo7',title:'Packed Lunch Boxes',donor:'City Restaurant',donorType:'Restaurant',img:'https://images.unsplash.com/photo-1621939514649-280e2ee25f60?q=80&w=600',servings:'40',weight:'18',distance:'1.9 km',expiry:'Expires in 5h 19m',address:'Nungambakkam High Road, Chennai'})">View Details</button>
+              </div>
+            </div>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</section>
+
+<!-- Food Detail / Claim Modal -->
+<div class="modal fade" id="foodDetailModal" tabindex="-1" aria-hidden="true">
+  <div class="modal-dialog modal-dialog-centered">
+    <div class="modal-content" style="border-radius:16px;border:none;overflow:hidden;">
+      <img id="fdmImg" src="" alt="" style="width:100%;height:200px;object-fit:cover;">
+      <div class="modal-body p-4">
+        <h5 id="fdmTitle" class="fw-bold mb-1"></h5>
+        <div id="fdmDonor" class="text-muted small mb-3"></div>
+        <div class="d-flex gap-4 mb-2 small">
+          <span>👥 <span id="fdmServings"></span> servings</span>
+          <span>🥡 <span id="fdmWeight"></span> kg</span>
+        </div>
+        <div class="mb-2 small">📍 <span id="fdmDistance"></span> · <span id="fdmAddress"></span></div>
+        <div class="mb-3 small fw-semibold" style="color:#c07b00;" id="fdmExpiry"></div>
+
+        <div class="mb-3" id="fdmDeliverySection">
+          <div class="small fw-semibold mb-2">How will you collect this?</div>
+          <div class="d-flex gap-2">
+            <button type="button" class="btn-fs-outline flex-fill fdm-delivery-opt" data-method="pickup" onclick="setDeliveryMethod('pickup')">🚶 Self Pickup</button>
+            <button type="button" class="btn-fs-outline flex-fill fdm-delivery-opt" data-method="volunteer" onclick="setDeliveryMethod('volunteer')">🚴 Volunteer Delivery</button>
+          </div>
+          <div class="small text-muted mt-1">Volunteer delivery is free — a nearby FoodShare volunteer picks up and drops it at your NGO. No shipping cost.</div>
+          <div class="mt-3" id="fdmNgoAddressWrap" style="display:none;">
+            <label class="form-label-fs">Your NGO's delivery address</label>
+            <input type="text" class="form-control-fs" id="fdmNgoAddress" placeholder="Where should the volunteer deliver this?">
+          </div>
+        </div>
+
+        <div id="fdmMsg" class="small mb-2"></div>
+        <button type="button" id="fdmClaimBtn" class="btn-fs-primary w-100 justify-content-center" onclick="claimFoodFromModal()" disabled>Choose a collection method above</button>
+      </div>
+    </div>
+  </div>
+</div>
+
+<footer class="footer-fs">
+  <div class="container text-center text-muted small">© 2026 FoodShare. Share Food. Share Happiness.</div>
+</footer>
+
+<script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
+<script src="js/main.js"></script>
+</body>
+</html>
